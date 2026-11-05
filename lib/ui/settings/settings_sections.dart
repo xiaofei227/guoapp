@@ -53,12 +53,11 @@ const _decoders = {
 };
 const _links = [
   [
-    ('GitHub · 重建版', 'https://github.com/Xanerix/guoapp'),
+    ('GitHub · 重建版', 'https://github.com/xiaofei227/zgjapp'),
     ('GitHub · 原作者', 'https://github.com/fish2018'),
   ],
   [
-    ('Telegram · 交流群组', 'https://t.me/+c9YKHp7FjSk0MjI1'),
-    ('Telegram · 更新频道', 'https://t.me/+F9NnQSsMfOU3OTdl'),
+    ('QQ · 交流群', 'https://qm.qq.com/q/884794128'),
   ],
 ];
 
@@ -420,7 +419,7 @@ class SettingsSection extends StatelessWidget {
     if (context.mounted) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('无法打开浏览器，链接已复制')));
+      ).showSnackBar(const SnackBar(content: Text('未能打开，链接已复制到剪贴板')));
     }
   }
 

@@ -1,4 +1,4 @@
-const repository = 'Xanerix/guoapp';
+const repository = 'xiaofei227/zgjapp';
 const platforms = new Set(['android', 'ios', 'windows', 'darwin', 'linux']);
 const builds = new Set(['hongguojian', 'zhenguojian']);
 
