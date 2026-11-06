@@ -307,6 +307,8 @@ class _PortraitPlayerPageState extends State<PortraitPlayerPage>
               key: ValueKey(player),
               controller: widget.handle.video(player),
               controls: NoVideoControls,
+              // contain：按视频原始宽高比居中，比例不匹配时上下留黑，不裁切画面。
+              fit: BoxFit.contain,
               fill: Colors.black,
               pauseUponEnteringBackgroundMode: false,
             ),
