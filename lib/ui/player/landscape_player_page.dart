@@ -407,7 +407,10 @@ class _LandscapePlayerPageState extends State<LandscapePlayerPage>
                         height: MediaQuery.paddingOf(context).top,
                       ),
                     ),
-                    AspectRatio(aspectRatio: 16 / 9, child: video),
+                    // 视频区：按实际宽高比自适应居中——竖版上下留黑、横版左右留黑。
+                    // 不再写死 16/9，避免竖版视频（9/16、3/4 等）被拉伸/裁切。
+                    // 弹窗、转横屏/全屏、选集、简介等功能全部保留不变。
+                    Expanded(child: video),
                     Expanded(child: _details(context)),
                   ],
                 ),
@@ -432,6 +435,8 @@ class _LandscapePlayerPageState extends State<LandscapePlayerPage>
           key: ValueKey(session.player),
           controller: widget.handle.video(session.player),
           controls: NoVideoControls,
+          // contain：按视频原始宽高比居中，不裁切——竖版上下留黑、横版左右留黑。
+          fit: BoxFit.contain,
           fill: Colors.black,
           pauseUponEnteringBackgroundMode: false,
         ),

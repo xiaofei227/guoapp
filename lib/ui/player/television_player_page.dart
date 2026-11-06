@@ -427,6 +427,7 @@ class _TelevisionPlayerPageState extends State<TelevisionPlayerPage>
                       key: ValueKey(_session.player),
                       controller: widget.handle.video(_session.player),
                       controls: NoVideoControls,
+                      fit: BoxFit.contain,
                       fill: Colors.black,
                       pauseUponEnteringBackgroundMode: false,
                     ),

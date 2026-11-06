@@ -209,6 +209,11 @@ class _PlaybackPageState extends State<PlaybackPage> {
     if (desktopPlatform) {
       final size = MediaQuery.sizeOf(context);
       return switch (form) {
+        FormFactor.phone when _wideVideo => LandscapePlayerPage(
+          store: widget.store,
+          handle: widget.handle,
+          onMiniWindow: mini,
+        ),
         FormFactor.phone => PortraitPlayerPage(
           store: widget.store,
           handle: widget.handle,
@@ -227,7 +232,13 @@ class _PlaybackPageState extends State<PlaybackPage> {
       };
     }
     return switch (form) {
+      // 横版视频进横屏播放器(info+选集+全屏/弹窗功能)，竖版进竖屏滑动播放器
       FormFactor.pad || FormFactor.window => _padPage(context, mini),
+      FormFactor.phone when _wideVideo => LandscapePlayerPage(
+        store: widget.store,
+        handle: widget.handle,
+        onMiniWindow: mini,
+      ),
       FormFactor.phone => PortraitPlayerPage(
         store: widget.store,
         handle: widget.handle,

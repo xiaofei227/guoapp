@@ -314,6 +314,7 @@ class _PlayerSurfaceState extends State<PlayerSurface> {
               key: ValueKey(_session.player),
               controller: widget.handle.video(_session.player),
               controls: NoVideoControls,
+              fit: BoxFit.contain,
               pauseUponEnteringBackgroundMode: false,
             ),
             DanmakuOverlay(
